@@ -1,4 +1,6 @@
 .DS_Store
 
-/leetcode/c++/.*.cpp.un~
+**/.*.un~
+
+# /leetcode/c++/.*.cpp.un~
 

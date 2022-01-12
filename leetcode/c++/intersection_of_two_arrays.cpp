@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> intersection(vector<int>& nums1, vector<int>& nums2){
+  vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
     // method 1
     /**
     set<int> set1(nums1.begin(), nums1.end());

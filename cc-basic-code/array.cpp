@@ -52,11 +52,12 @@ int main()
     // int array1[] = {1, 2, 3};
     array_ops(array1, 3);
 
-    int* array2 = new int[3];
-    array2[0] = 1;
-    array2[1] = 2;
-    array2[2] = 3;
-    array_ops(array2, 3);
+    // int* array2 = new int[3];
+    // array2[0] = 1;
+    // array2[1] = 2;
+    // array2[2] = 3;
+    // array_ops(array2, 3);
+    int* array2 = new int[]{1, 2, 3};
     delete [] array2;
 
 

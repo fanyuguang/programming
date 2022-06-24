@@ -13,43 +13,30 @@ public:
     {
         long num = 0;
         int pos_neg_flag = 1;
-        int pos_neg_cnt = 0;
-        for (int i = 0; i < s.size(); i++)
+        int i = 0;
+        while (s[i] == ' ' and i < s.size())
         {
-            if (s[i] == ' ')
-            {
-                continue;
-            }
-            else if (s[i] == '+')
-            {
-                pos_neg_cnt += 1;
-                continue;
-            }
-            else if (s[i] == '-')
-            {
-                pos_neg_flag = -1;
-                pos_neg_cnt += 1;
-                continue;
-            }
+            i++;
+        }
+        if (s[i] == '+')
+        {
+           i++;
+        }
+        else if (s[i] == '-')
+        {
+            pos_neg_flag = -1;
+            i++;
+        }
 
-            if (pos_neg_cnt > 1)
+        while (s[i] >= '0' and s[i] <= '9' and i < s.size())
+        {
+            num *= 10;
+            num += s[i] - '0';
+            if ((pos_neg_flag == 1 && num > INT_MAX) || (pos_neg_flag == -1 && pos_neg_flag * num < INT_MIN))
             {
                 break;
             }
-
-            if (s[i] >= '0' && s[i] <= '9')
-            {
-                num *= 10;
-                num += s[i] - '0';
-            }
-            else if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z') || s[i] == '.')
-            {
-                break;
-            }
-            else if (num != 0 && s[i] == ' ')
-            {
-                break;
-            }
+            i++;
         }
         num *= pos_neg_flag;
 
@@ -73,7 +60,9 @@ int main()
     // string s = "   -42";
     // string s = "4193 with words";
     // string s = "3.14159";
-    string s = "+-12";
+    // string s = "+-12";
+    string s = "20000000000000000000";
+
     Solution solution;
     int result = solution.myAtoi(s);
     cout << result << endl;

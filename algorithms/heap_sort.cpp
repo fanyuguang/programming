@@ -2,6 +2,10 @@
 
 using namespace std;
 
+// heap_size: n
+// height: log2^(n + 1)
+// first leaf index: n / 2 + 1
+// for node i, leaf node: i * 2 + 1, right node: i * 2 + 2
 void max_heapify(int* array, int index, int end_index)
 {
 	if (index > end_index || index < 0)

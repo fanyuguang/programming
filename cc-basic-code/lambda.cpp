@@ -59,5 +59,11 @@ int main() {
 
   S s;
   s.print();
+
+
+  // lambda compute sum
+  auto func5 = [&](int a, int b) -> int { return a + b; };
+  int c = func5(1, 2);
+  cout << "func5 c: " << c << endl;
   return 0;
 }
